@@ -5,7 +5,44 @@ public class GradeCalculator {
 		// 1. Initialize any variables and objects you need (i.e. a scanner, some
 		// counters for a total running sum, and a number tracking the # of scores inputted
 
+		Scanner sc = new Scanner(System.in);
+		int i = 0; // Counter
+		int n = 0; // Number of input scores
+		int sum = 0; // Sum variable
 		
+		
+		while(true) {
+			System.out.println("\nEnter your grade (as an integer):");
+			int num = sc.nextInt();
+			
+			if (num >= 0 && num <= 100) {
+				
+				n++;
+				sum += num;
+				int GPA = sum/n;
+				System.out.printf("\nYour class average is: %d\n", GPA);
+				
+				if (num > 90) {
+					System.out.println("Excellent work!\n");
+				} else if (num > 80) {
+					System.out.println("Good job!\n");
+				} else if (num > 70) {
+					System.out.println("Keep it up!\n");
+				} else {
+					System.out.println("Let's work hard to get those grades up!\n");
+				}
+				
+			} else if (num > 100) {
+				
+				System.out.println("Error: Grades must be between 0 and 100");
+				continue;
+				
+			} else {
+				System.out.println("Program terminated due to negative input.");
+				break;
+				
+			}
+		}
 		
 		
 		
